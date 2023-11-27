@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+}
+.content-graph{
+    display: flex;
+    align-items: end;
+}
+.week{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+}
+.week .w{
+    height: 15px;
+    width: 15px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-right: 5px;
+    color: #959494;
+}
+
+.week .w:nth-child(2n), .week .w:last-child {
+  opacity: 0;
+}
+
+.month{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(12, 1fr);
+}
+.month .m{
+    margin: 1px;
+    color: #959494;
+}
+#contribution-graph {
+    display: grid;
+    grid-template-columns: repeat(7, 0fr);
+    writing-mode: vertical-lr;
+}
+.cell {
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    cursor: pointer;
+    position: relative;
+}
+.color-0 { background-color: #EDEDED; }
+.color-1 { background-color: #acd5f2; }
+.color-2 { background-color: #7fa8c9; }
+.color-3 { background-color: #527ba0; }
+.color-4 { background-color: #254e77; }
+.hover-info{
+    position: absolute;
+    border-radius: 3px;
+    background: #000;
+    width: auto;
+    height: 32px;
+    opacity: 0;
+    z-index: 1;
+    top: -50px;
+    pointer-events: none;
+    writing-mode: horizontal-tb;
+    text-wrap: nowrap;
+    padding: 5px 10px;
+    transition: 0.1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    color: #7C7C7C;
+    justify-content: space-around;
+}
+.hover-info .contributions{
+    color: #FFF;
+    font-size: 12px;
+}
+.hover-info::after{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    bottom: -10px;
+    clip-path: polygon(50% 60%, 0 0, 100% 0);
+    background-color: #000;
+    width: 10px;
+    height: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.cell:hover  .hover-info{
+    opacity: 1;
+}
+
+.information-block{
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  color: #959494;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+.information-block .information-block__items{
+  display: flex;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.information-block .information-block__items .item{
+  margin: 1px;
+  width: 15px;
+  height: 15px;
+}
